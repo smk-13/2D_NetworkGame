@@ -6,7 +6,7 @@ public class ProjectileLifeCycle : NetworkBehaviour
 {
 
     float maxAge = 4f;
-    float timer = 0;
+    float currentAge = 0;
 
     Collider2D[] hitColliders = new Collider2D[5];
 
@@ -29,9 +29,9 @@ public class ProjectileLifeCycle : NetworkBehaviour
             }
         }
 
-        timer += Time.deltaTime;
+        currentAge += Time.deltaTime;
 
-        if (timer > maxAge)
+        if (currentAge > maxAge)
         {
             gameObject.SetActive(false);
         }
@@ -39,6 +39,6 @@ public class ProjectileLifeCycle : NetworkBehaviour
 
     private void OnDisable()
     {
-        timer = 0;
+        currentAge = 0;
     }
 }

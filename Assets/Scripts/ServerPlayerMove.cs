@@ -23,4 +23,6 @@ public class ServerPlayerMove : NetworkBehaviour
         var spawnPosition = spawnPoint ? spawnPoint.transform.position : Vector3.zero;
         transform.position = spawnPosition;
     }
+
+
 }

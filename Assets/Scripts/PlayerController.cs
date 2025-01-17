@@ -40,4 +40,13 @@ public class PlayerController : MonoBehaviour
         turnAxis = 0;
         rb.linearVelocity = Vector2.zero;
     }
+
+    void OnFire()
+    {
+        GameObject projectile = ObjectPoolManager.Instance.projectilePool.GetObject(
+            transform.position + (transform.up * 0.75f), transform.rotation);
+    }
+
+
+
 }

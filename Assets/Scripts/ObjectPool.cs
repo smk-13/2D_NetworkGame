@@ -19,9 +19,9 @@ public class ObjectPool : MonoBehaviour
 
     GameObject CreateObject()
     {
-        GameObject createdObject = Instantiate(prefab, transform);
-        objectPool.Add(createdObject);
-        return createdObject;
+        GameObject poolObject = Instantiate(prefab, transform);
+        objectPool.Add(poolObject);
+        return poolObject;
     }
 
     public GameObject GetObject()
@@ -41,6 +41,15 @@ public class ObjectPool : MonoBehaviour
         }
 
         return CreateObject();
+    }
+
+    public GameObject GetObject(Vector3 position, Quaternion rotation)
+    {
+        GameObject poolObject = GetObject();
+        poolObject.transform.position = position;
+        poolObject.transform.rotation = rotation;
+        poolObject.SetActive(true);
+        return poolObject;
     }
 
 
