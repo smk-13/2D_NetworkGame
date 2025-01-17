@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 4917942676737612403}
   - component: {fileID: 7253690639813292258}
   - component: {fileID: 5925172197686306770}
+  - component: {fileID: -6788332810907534993}
   m_Layer: 0
   m_Name: PlayerArmature_Networked
   m_TagString: Untagged
@@ -311,7 +312,7 @@ MonoBehaviour:
   UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
-  SyncPositionZ: 1
+  SyncPositionZ: 0
   SyncRotAngleX: 0
   SyncRotAngleY: 0
   SyncRotAngleZ: 1
@@ -360,6 +361,19 @@ MonoBehaviour:
   playerController: {fileID: 3542499499048219044}
   flameColor:
     m_InternalValue: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &-6788332810907534993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695575126511164385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d562cc970ecf7844e975deda4d91a8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!1 &5423315955911535207
 GameObject:
   m_ObjectHideFlags: 0

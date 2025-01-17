@@ -1,7 +1,7 @@
 using UnityEngine;
 using Unity.Netcode;
 
-public class PlayerNetworkColor : NetworkBehaviour
+public class PlayerColor : NetworkBehaviour
 {
     [SerializeField] Color playerOneColor = new Color(1, 0, 0, 0.5f);
     [SerializeField] Color playerTwoColor = new Color(0, 0, 1, 0.5f);
