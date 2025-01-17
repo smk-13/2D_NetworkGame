@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 3542499499048219044}
   - component: {fileID: 3997259386215439562}
   - component: {fileID: 4917942676737612403}
+  - component: {fileID: 7253690639813292258}
   m_Layer: 0
   m_Name: PlayerArmature_Networked
   m_TagString: Untagged
@@ -166,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 776832540
+  GlobalObjectIdHash: 1895749608
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -326,6 +327,21 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &7253690639813292258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695575126511164385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffae6c28148104b4db003ab8f2e775ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  playerOneColor: {r: 1, g: 0, b: 0, a: 0.5}
+  playerTwoColor: {r: 0, g: 0, b: 1, a: 0.5}
 --- !u!1 &5423315955911535207
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +419,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9150943, g: 0.72319174, b: 0.16834284, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
