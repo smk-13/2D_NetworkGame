@@ -60,7 +60,7 @@ public class PlayerHealthUI : MonoBehaviour
 
     private void OnPlayerHealthChanged(float newHealthValue)
     {
-        m_HealthLabel.text = $"Health {newHealthValue}/{maxHealth}";
+        m_HealthLabel.text = $"Health {newHealthValue}/{maxHealth}";  // not used right now
 
         string healthPoints = "";
         for(int i = 0 ; i < (int)newHealthValue; i++)
