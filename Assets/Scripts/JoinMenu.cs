@@ -41,17 +41,16 @@ public class JoinMenu : MonoBehaviour
         Hide();
     }
 
-    void OnQuitButtonClicked()
-    {
-        Application.Quit();
-        Debug.Log("Quit Game");
-    }
-
     void Hide()
     {
         UIDoc.gameObject.SetActive(false);
     }
 
+    void OnQuitButtonClicked()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
+    }
 
 
 
