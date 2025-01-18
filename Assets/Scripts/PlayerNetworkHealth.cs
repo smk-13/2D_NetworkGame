@@ -5,7 +5,7 @@ using System;
 public class PlayerNetworkHealth : NetworkBehaviour
 {
 
-    [SerializeField] float maxHealth = 5f;
+    public float maxHealth = 5f;
 
     private NetworkVariable<float> healthVar = new NetworkVariable<float>(5f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     //private NetworkVariable<float> healthVar = new NetworkVariable<float>(5f);
