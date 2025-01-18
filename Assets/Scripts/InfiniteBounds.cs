@@ -1,14 +1,13 @@
 using UnityEngine;
 using Unity.Netcode;
 
-public class InfiniteBounds : NetworkBehaviour
+public class InfiniteBounds : MonoBehaviour
 {
     Rigidbody2D rb;
     Camera cam;
 
-    public override void OnNetworkSpawn()
+    private void Awake()
     {
-        base.OnNetworkSpawn();
         rb = GetComponent<Rigidbody2D>();
         cam = Camera.main;
     }

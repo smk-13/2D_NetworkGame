@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: -6788332810907534993}
   - component: {fileID: 1426180044530694446}
   - component: {fileID: 4507217160679847456}
+  - component: {fileID: 4788393605935378132}
   m_Layer: 0
   m_Name: PlayerArmature_Networked
   m_TagString: Untagged
@@ -308,7 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  NetworkTransformExpanded: 1
+  NetworkTransformExpanded: 0
   AuthorityMode: 1
   TickSyncChildren: 0
   UseUnreliableDeltas: 0
@@ -405,6 +406,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   maxHealth: 10
+--- !u!114 &4788393605935378132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695575126511164385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0c072ab18493f4a820e19030a42fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5423315955911535207
 GameObject:
   m_ObjectHideFlags: 0
