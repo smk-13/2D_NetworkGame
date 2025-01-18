@@ -10,11 +10,14 @@ public class PlayerHealthUI : MonoBehaviour
     Label m_HealthLabel;
     float maxHealth;
 
+    Label m_HealthPoints;
+
     private void Start()
     {
 ;       NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
         NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnected;
         m_HealthLabel = UIDoc.rootVisualElement.Q<Label>("HealthLabel");
+        m_HealthPoints = UIDoc.rootVisualElement.Q<Label>("HealthPoints");
     }
 
     void OnDestroy()
@@ -57,22 +60,17 @@ public class PlayerHealthUI : MonoBehaviour
 
     private void OnPlayerHealthChanged(float newHealthValue)
     {
-        m_HealthLabel.text = $"{newHealthValue}/{maxHealth}";
+        m_HealthLabel.text = $"Health {newHealthValue}/{maxHealth}";
+
+        string healthPoints = "";
+        for(int i = 0 ; i < (int)newHealthValue; i++)
+        {
+            healthPoints += "^ ";
+        }
+
+        m_HealthPoints.text = healthPoints;
+
     }
 
-    /*
-    private void Start()
-    {
-        playerNetworkHealth.OnHealthChanged += OnPlayerHealthChanged;
-        m_HealthLabel = UIDoc.rootVisualElement.Q<Label>("HealthLabel");
-        OnPlayerHealthChanged(playerNetworkHealth.Health);
 
-    }
-
-
-    void OnPlayerHealthChanged(float newHealthValue)
-    {
-        m_HealthLabel.text = $"{newHealthValue}/{playerNetworkHealth.maxHealth}";
-    }
-    */
 }
