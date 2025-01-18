@@ -38,7 +38,6 @@ public class PlayerNetworkHealth : NetworkBehaviour
         OnHealthChanged?.Invoke(newValue); // this is used to inform the health UI
     }
 
-    /*
     private void OnTest()  // press T
     {
         if (IsOwner)
@@ -47,7 +46,6 @@ public class PlayerNetworkHealth : NetworkBehaviour
             Debug.Log(Health);
         }
     }
-    */
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
