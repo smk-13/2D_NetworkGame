@@ -17,12 +17,18 @@ public class ServerPlayerMove : NetworkBehaviour
     }
 
     // Move to the next available position when spawning
-    void SpawnPlayer()
+    void SpawnPlayerRandom()
     {
         var spawnPoint = ServerPlayerSpawnPoints.Instance.GetRandomSpawnPoint();
         var spawnPosition = spawnPoint ? spawnPoint.transform.position : Vector3.zero;
         transform.position = spawnPosition;
     }
 
+    void SpawnPlayer()
+    {
+        var spawnPoint = ServerPlayerSpawnPoints.Instance.GetSpawnPoint(OwnerClientId);
+        var spawnPosition = spawnPoint ? spawnPoint.transform.position : Vector3.zero;
+        transform.position = spawnPosition;
+    }
 
 }

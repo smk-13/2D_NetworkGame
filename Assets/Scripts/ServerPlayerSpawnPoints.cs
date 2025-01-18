@@ -12,4 +12,9 @@ public class ServerPlayerSpawnPoints : Singleton<ServerPlayerSpawnPoints>
             return null;
         return m_SpawnPoints[Random.Range(0, m_SpawnPoints.Count)];
     }
+
+    public GameObject GetSpawnPoint(ulong playerId)
+    {
+        return m_SpawnPoints[(int)playerId];
+    }
 }
