@@ -1,0 +1,44 @@
+using UnityEngine;
+using Unity.Netcode;
+using System;
+
+public class PlayerNetworkHealth : NetworkBehaviour
+{
+
+    private NetworkVariable<float> healthVar = new NetworkVariable<float>(5);
+
+    public event Action<float> OnHealthChanged;
+
+    public float Health { get => healthVar.Value; }
+
+
+    public override void OnNetworkSpawn()
+    {
+        base.OnNetworkSpawn();
+
+        healthVar.OnValueChanged += OnHealthValueChanged;
+        Debug.Log(Health);
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        base.OnNetworkDespawn();
+
+        healthVar.OnValueChanged -= OnHealthValueChanged;
+    }
+
+    private void OnHealthValueChanged(float oldValue, float newValue)
+    {
+        OnHealthChanged?.Invoke(newValue); // this is used to inform the health UI
+    }
+
+    private void OnTest()  // press T
+    {
+        if (IsOwner)
+        {
+            healthVar.Value -= 1;
+            Debug.Log(Health);
+        }
+    }
+
+}

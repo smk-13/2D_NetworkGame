@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 5925172197686306770}
   - component: {fileID: -6788332810907534993}
   - component: {fileID: 1426180044530694446}
+  - component: {fileID: 3738640015911567173}
   m_Layer: 0
   m_Name: PlayerArmature_Networked
   m_TagString: Untagged
@@ -390,6 +391,19 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   playerController: {fileID: 3542499499048219044}
   playerInput: {fileID: 3997259386215439562}
+--- !u!114 &3738640015911567173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2695575126511164385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4112a785509cb194db0fd48b764c7b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
 --- !u!1 &5423315955911535207
 GameObject:
   m_ObjectHideFlags: 0
