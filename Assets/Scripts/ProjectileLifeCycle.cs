@@ -5,7 +5,7 @@ using Unity.Netcode;
 public class ProjectileLifeCycle : NetworkBehaviour
 {
 
-    float maxAge = 4f;
+    float maxAge = 2f;
     float currentAge = 0;
 
     Collider2D[] hitColliders = new Collider2D[5];
@@ -22,7 +22,8 @@ public class ProjectileLifeCycle : NetworkBehaviour
                 if (hitColliders[i].TryGetComponent(out Damageable damageable))
                 {
                     Debug.Log("A damageable has been hit");
-                    gameObject.SetActive(false);
+                    //gameObject.SetActive(false);
+                    DespawnProjectile();
                     break;
                 }
 
@@ -33,9 +34,17 @@ public class ProjectileLifeCycle : NetworkBehaviour
 
         if (currentAge > maxAge)
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+            DespawnProjectile();
         }
     }
+
+    private void DespawnProjectile()
+    {
+        NetworkObject networkObject = gameObject.GetComponent<NetworkObject>();
+        networkObject.Despawn();
+    }
+
 
     private void OnDisable()
     {
