@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  maxHealth: 10
+  maxHealth: 5
 --- !u!114 &4788393605935378132
 MonoBehaviour:
   m_ObjectHideFlags: 0
