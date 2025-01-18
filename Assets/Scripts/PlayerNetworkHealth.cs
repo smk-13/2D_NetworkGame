@@ -5,7 +5,10 @@ using System;
 public class PlayerNetworkHealth : NetworkBehaviour
 {
 
-    private NetworkVariable<float> healthVar = new NetworkVariable<float>(5);
+    //[SerializeField] float maxHealth = 5f;
+
+    private NetworkVariable<float> healthVar = new NetworkVariable<float>(5f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    //private NetworkVariable<float> healthVar = new NetworkVariable<float>(5f);
 
     public event Action<float> OnHealthChanged;
 
@@ -15,9 +18,7 @@ public class PlayerNetworkHealth : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-
         healthVar.OnValueChanged += OnHealthValueChanged;
-        Debug.Log(Health);
     }
 
     public override void OnNetworkDespawn()
@@ -32,6 +33,7 @@ public class PlayerNetworkHealth : NetworkBehaviour
         OnHealthChanged?.Invoke(newValue); // this is used to inform the health UI
     }
 
+
     private void OnTest()  // press T
     {
         if (IsOwner)
@@ -40,5 +42,20 @@ public class PlayerNetworkHealth : NetworkBehaviour
             Debug.Log(Health);
         }
     }
+
+
+    /*
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (IsOwner)
+            {
+                healthVar.Value -= 1;
+                Debug.Log(Health);
+            }
+        }
+    }
+    */
 
 }

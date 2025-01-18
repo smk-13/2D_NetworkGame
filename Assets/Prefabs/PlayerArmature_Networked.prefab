@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5925172197686306770}
   - component: {fileID: -6788332810907534993}
   - component: {fileID: 1426180044530694446}
-  - component: {fileID: 3738640015911567173}
+  - component: {fileID: 4507217160679847456}
   m_Layer: 0
   m_Name: PlayerArmature_Networked
   m_TagString: Untagged
@@ -391,7 +391,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   playerController: {fileID: 3542499499048219044}
   playerInput: {fileID: 3997259386215439562}
---- !u!114 &3738640015911567173
+--- !u!114 &4507217160679847456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  maxHealth: 5
 --- !u!1 &5423315955911535207
 GameObject:
   m_ObjectHideFlags: 0
