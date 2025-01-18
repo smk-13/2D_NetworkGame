@@ -5,7 +5,7 @@ using System;
 public class PlayerNetworkHealth : NetworkBehaviour
 {
 
-    //[SerializeField] float maxHealth = 5f;
+    [SerializeField] float maxHealth = 5f;
 
     private NetworkVariable<float> healthVar = new NetworkVariable<float>(5f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     //private NetworkVariable<float> healthVar = new NetworkVariable<float>(5f);
@@ -18,6 +18,11 @@ public class PlayerNetworkHealth : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
+        if (IsOwner)
+        {
+            healthVar.Value = maxHealth;
+        }
+
         healthVar.OnValueChanged += OnHealthValueChanged;
     }
 
