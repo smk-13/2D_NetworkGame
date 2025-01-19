@@ -3,7 +3,7 @@ using Unity.Netcode;
 using UnityEngine.UIElements;
 using System.Collections;
 
-public class ColorTrigger : NetworkBehaviour
+public class CheckPointTrigger : NetworkBehaviour
 {
     public NetworkVariable<Color> checkPointColor = new NetworkVariable<Color>(Color.white);
     [SerializeField] SpriteRenderer spriteRenderer;
@@ -55,12 +55,13 @@ public class ColorTrigger : NetworkBehaviour
     private void NotifyEveryoneColorChangeRpc(ulong playerId)
     {
         Debug.Log($"Player {playerId + 1} has captured the check point.");
-        StartCoroutine(DisplayTextMessage($"Player {playerId + 1} has captured the check point.", 6f));
+        StartCoroutine(DisplayTextMessage($"Player {playerId + 1} has captured the check point.", 10f));
     }
 
 
     IEnumerator DisplayTextMessage(string myMessage, float duration)
     {
+        StopAllCoroutines();
         messages.text = myMessage;
         yield return new WaitForSeconds(duration);
         messages.text = "";
