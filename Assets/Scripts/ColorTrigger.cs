@@ -31,15 +31,24 @@ public class ColorTrigger : NetworkBehaviour
         NetworkObject networkObject = collision.GetComponent<NetworkObject>();
         if (IsClient && networkObject != null && networkObject.IsOwner)
         {
-            ChangeColorServerRpc(networkObject.OwnerClientId);
+            ChangeColorRpc(networkObject.OwnerClientId);
         }
     }
 
     [Rpc(SendTo.Server)]
-    private void ChangeColorServerRpc(ulong playerId)
+    private void ChangeColorRpc(ulong playerId)
     {
         // TO DO: connect with PlayerColor script
         checkPointColor.Value = (playerId % 2 == 0) ? new Color(1, 0, 0, 0.5f) : new Color(0, 0, 1, 0.5f);
+        NotifyEveryoneColorChangeRpc(playerId);
     }
+
+
+    [Rpc(SendTo.ClientsAndHost)]
+    private void NotifyEveryoneColorChangeRpc(ulong playerId)
+    {
+        Debug.Log($"Player {playerId + 1} has captured the check point.");
+    }
+
 
 }
