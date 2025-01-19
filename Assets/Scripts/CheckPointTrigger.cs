@@ -33,11 +33,14 @@ public class CheckPointTrigger : NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        NetworkObject networkObject = collision.GetComponent<NetworkObject>();
-        if (IsClient && networkObject != null && networkObject.IsOwner)
+        if (collision.GetComponent<PlayerController>() != null)
         {
-            ChangeColorRpc(networkObject.OwnerClientId);
-        }
+            NetworkObject networkObject = collision.GetComponent<NetworkObject>();
+            if (IsClient && networkObject != null && networkObject.IsOwner)
+            {
+                ChangeColorRpc(networkObject.OwnerClientId);
+            }
+        } 
     }
 
     [Rpc(SendTo.Server)]
@@ -56,7 +59,7 @@ public class CheckPointTrigger : NetworkBehaviour
     {
         Debug.Log($"Player {playerId + 1} has captured the check point.");
         StopAllCoroutines();
-        StartCoroutine(DisplayTextMessage($"Player {playerId + 1} has captured the check point.", 10f));
+        StartCoroutine(DisplayTextMessage($"Player {playerId + 1} has captured the check point.", 6f));
     }
 
 

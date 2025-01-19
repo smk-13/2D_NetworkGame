@@ -22,6 +22,7 @@ public class ProjectileLifeCycle : NetworkBehaviour
                 if (hitColliders[i].TryGetComponent(out Damageable damageable))
                 {
                     Debug.Log("A damageable has been hit");
+                    damageable.TakeDamageRpc(1f);
                     DespawnProjectileRpc();
                     break;
                 }

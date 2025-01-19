@@ -1264,37 +1264,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740148277}
   m_CullTransparentMesh: 1
---- !u!1 &783825066
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 783825067}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &783825067
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 783825066}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &825338124 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3598248808072812270, guid: 28c87ce527f75564fb5c0a7fb7a2f60c, type: 3}
@@ -1313,6 +1282,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1690338954}
     m_Modifications:
+    - target: {fileID: 1807333584049109958, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2952395156
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807333584049109958, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 3294524031
+      objectReference: {fileID: 0}
     - target: {fileID: 2492045828440534230, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -1918,6 +1895,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1690338954}
     m_Modifications:
+    - target: {fileID: 1807333584049109958, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 4185982090
+      objectReference: {fileID: 0}
+    - target: {fileID: 1807333584049109958, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 3294524031
+      objectReference: {fileID: 0}
     - target: {fileID: 2492045828440534230, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -7190,4 +7175,3 @@ SceneRoots:
   - {fileID: 1952535651}
   - {fileID: 671402062}
   - {fileID: 445392424}
-  - {fileID: 783825067}

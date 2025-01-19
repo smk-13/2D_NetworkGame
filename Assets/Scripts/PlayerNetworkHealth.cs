@@ -7,8 +7,8 @@ public class PlayerNetworkHealth : NetworkBehaviour
 
     public float maxHealth = 5f;
 
-    private NetworkVariable<float> healthVar = new NetworkVariable<float>(5f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    //private NetworkVariable<float> healthVar = new NetworkVariable<float>(5f);
+    private NetworkVariable<float> healthVar = new NetworkVariable<float>(5f,
+        NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     public event Action<float> OnHealthChanged;
 
@@ -35,7 +35,7 @@ public class PlayerNetworkHealth : NetworkBehaviour
 
     private void OnHealthValueChanged(float oldValue, float newValue)
     {
-        OnHealthChanged?.Invoke(newValue); // this is used to inform the health UI
+        OnHealthChanged?.Invoke(newValue);
     }
 
     private void OnTest()  // press T
@@ -53,8 +53,7 @@ public class PlayerNetworkHealth : NetworkBehaviour
         {
             healthVar.Value -= 1;
             Debug.Log(Health);
-        }
-            
+        } 
     }
 
 
