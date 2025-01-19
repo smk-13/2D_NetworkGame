@@ -1,8 +1,8 @@
-using System.Globalization;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     Rigidbody2D rb;
 
@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     float moveAxis;
     float turnAxis;
 
-
+    [SerializeField] GameObject projectilePrefab;
 
     private void Awake()
     {
@@ -43,15 +43,25 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    /*
     void OnFire()
     {
-
-        GameObject projectile = ObjectPoolManager.Instance.projectilePool.GetObject(
-            transform.position + (transform.up * 0.75f), transform.rotation);
-
+        SpawnProjectileRpc();
     }
-    */
+
+    // this works, but the latency is crazy high
+    [Rpc(SendTo.Server)]
+    private void SpawnProjectileRpc()
+    {
+        GameObject projectile = Instantiate(projectilePrefab,
+            transform.position + (transform.up * 1.5f), transform.rotation);
+
+        NetworkObject projectileNetworkObject = projectile.GetComponent<NetworkObject>();
+        projectileNetworkObject.Spawn();
+    }
+
+
+
+
 
 
 

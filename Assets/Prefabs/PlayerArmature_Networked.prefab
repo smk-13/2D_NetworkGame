@@ -264,8 +264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c443bbdf281650f49a2b74b12ca5f730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   moveSpeed: 5
   turnSpeed: 2
+  projectilePrefab: {fileID: 6165560577172541606, guid: 84cd41a61d7d3c048b4fa66c6f391cb5, type: 3}
 --- !u!114 &3997259386215439562
 MonoBehaviour:
   m_ObjectHideFlags: 0

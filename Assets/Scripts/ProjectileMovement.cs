@@ -3,7 +3,7 @@ using UnityEngine;
 public class ProjectileMovement : MonoBehaviour
 {
 
-    [SerializeField] float moveSpeed = 20;
+    [SerializeField] float moveSpeed = 15;
 
     private void Update()
     {
