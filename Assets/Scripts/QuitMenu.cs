@@ -9,7 +9,7 @@ public class QuitMenu : NetworkBehaviour
 
     void OnPause()
     {
-        QuitUI.SetActive(true);
+        QuitUI.SetActive(!QuitUI.activeSelf);
     }
 
     public void ResumeGame()

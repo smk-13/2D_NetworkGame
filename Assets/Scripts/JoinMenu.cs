@@ -10,6 +10,9 @@ public class JoinMenu : MonoBehaviour
     Button clientButton;
     Button quitButton;
 
+    public event Action OnStartHost;
+    public event Action OnStartClient;
+
     private void OnEnable()
     {
         hostButton = UIDoc.rootVisualElement.Q<Button>("HostButton");
@@ -33,12 +36,14 @@ public class JoinMenu : MonoBehaviour
     {
         NetworkManager.Singleton.StartHost();
         Hide();
+        OnStartHost?.Invoke();
     }
 
     void OnClientButtonClicked()
     {
         NetworkManager.Singleton.StartClient();
         Hide();
+        OnStartClient?.Invoke();
     }
 
     void Hide()
