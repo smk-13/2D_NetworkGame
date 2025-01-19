@@ -2142,6 +2142,7 @@ MonoBehaviour:
   checkPointColor:
     m_InternalValue: {r: 1, g: 1, b: 1, a: 1}
   spriteRenderer: {fileID: 1660552834}
+  UIDoc: {fileID: 1952535650}
 --- !u!1 &1671442165
 GameObject:
   m_ObjectHideFlags: 0
@@ -7154,7 +7155,7 @@ SceneRoots:
   - {fileID: 1332842565}
   - {fileID: 1660552835}
   - {fileID: 1569999121}
-  - {fileID: 1952535651}
   - {fileID: 1466733993}
+  - {fileID: 1952535651}
   - {fileID: 671402062}
   - {fileID: 445392424}

@@ -1,17 +1,21 @@
 using UnityEngine;
 using Unity.Netcode;
+using UnityEngine.UIElements;
+using System.Collections;
 
 public class ColorTrigger : NetworkBehaviour
 {
     public NetworkVariable<Color> checkPointColor = new NetworkVariable<Color>(Color.white);
     [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] UIDocument UIDoc;
+    Label messages;
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
         checkPointColor.OnValueChanged += OnColorChanged;
-        //SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();  // not working?!
-        spriteRenderer.color = checkPointColor.Value;
+        spriteRenderer.color = Color.white;
+        messages = UIDoc.rootVisualElement.Q<Label>("Messages");
     }
 
 
@@ -40,8 +44,10 @@ public class ColorTrigger : NetworkBehaviour
     private void ChangeColorRpc(ulong playerId)
     {
         // TO DO: connect with PlayerColor script
-        checkPointColor.Value = (playerId % 2 == 0) ? new Color(1, 0, 0, 0.5f) : new Color(0, 0, 1, 0.5f);
         NotifyEveryoneColorChangeRpc(playerId);
+        checkPointColor.Value = (playerId % 2 == 0) ? new Color(1, 0, 0, 0.5f) : new Color(0, 0, 1, 0.5f);
+        
+
     }
 
 
@@ -49,6 +55,15 @@ public class ColorTrigger : NetworkBehaviour
     private void NotifyEveryoneColorChangeRpc(ulong playerId)
     {
         Debug.Log($"Player {playerId + 1} has captured the check point.");
+        StartCoroutine(DisplayTextMessage($"Player {playerId + 1} has captured the check point.", 6f));
+    }
+
+
+    IEnumerator DisplayTextMessage(string myMessage, float duration)
+    {
+        messages.text = myMessage;
+        yield return new WaitForSeconds(duration);
+        messages.text = "";
     }
 
 
