@@ -11,6 +11,7 @@ public class ColorTrigger : NetworkBehaviour
         base.OnNetworkSpawn();
         checkPointColor.OnValueChanged += OnColorChanged;
         //SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();  // not working?!
+        spriteRenderer.color = checkPointColor.Value;
     }
 
 

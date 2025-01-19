@@ -182,6 +182,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408843379614477378, guid: 9032e59c37f76b441be45194081fb751, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355809098573015258, guid: 9032e59c37f76b441be45194081fb751, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8580801295596479042, guid: 9032e59c37f76b441be45194081fb751, type: 3}
@@ -398,6 +402,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598248808072812270, guid: 28c87ce527f75564fb5c0a7fb7a2f60c, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775526893318718326, guid: 28c87ce527f75564fb5c0a7fb7a2f60c, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -464,6 +472,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598248808072812270, guid: 28c87ce527f75564fb5c0a7fb7a2f60c, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775526893318718326, guid: 28c87ce527f75564fb5c0a7fb7a2f60c, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1328,6 +1340,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4032213806814568545, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751261096134932301, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7870135282031261602, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
@@ -1807,6 +1823,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408843379614477378, guid: 9032e59c37f76b441be45194081fb751, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355809098573015258, guid: 9032e59c37f76b441be45194081fb751, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8580801295596479042, guid: 9032e59c37f76b441be45194081fb751, type: 3}
@@ -1925,6 +1945,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4032213806814568545, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6751261096134932301, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7870135282031261602, guid: f6bd7c4512cc9d64782fd5fbb5029893, type: 3}
@@ -2006,7 +2030,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2029,7 +2053,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1690338954}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1660552836
 BoxCollider2D:
@@ -2158,7 +2182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1690338954}
-  - component: {fileID: 1690338955}
+  - component: {fileID: 1690338957}
   m_Layer: 0
   m_Name: StartObjects
   m_TagString: Untagged
@@ -2185,10 +2209,9 @@ Transform:
   - {fileID: 1612711061}
   - {fileID: 825338128}
   - {fileID: 255023611}
-  - {fileID: 1660552835}
   m_Father: {fileID: 1569999121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1690338955
+--- !u!114 &1690338957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2208,7 +2231,6 @@ MonoBehaviour:
   - {fileID: 1377364018}
   - {fileID: 825338124}
   - {fileID: 1942327730}
-  - {fileID: 1660552833}
 --- !u!1 &1705662533
 GameObject:
   m_ObjectHideFlags: 0
@@ -7130,6 +7152,7 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 190066669}
   - {fileID: 1332842565}
+  - {fileID: 1660552835}
   - {fileID: 1569999121}
   - {fileID: 1952535651}
   - {fileID: 1466733993}
