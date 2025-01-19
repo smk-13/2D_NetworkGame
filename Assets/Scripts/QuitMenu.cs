@@ -1,19 +1,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Netcode;
 
-public class PauseMenu : MonoBehaviour
+public class QuitMenu : NetworkBehaviour
 {
 
-    [SerializeField] GameObject PauseUI;
+    [SerializeField] GameObject QuitUI;
 
     void OnPause()
     {
-        PauseUI.SetActive(true);
+        QuitUI.SetActive(true);
     }
 
     public void ResumeGame()
     {
-        PauseUI.SetActive(false);
+        QuitUI.SetActive(false);
     }
 
     public void QuitGame()
