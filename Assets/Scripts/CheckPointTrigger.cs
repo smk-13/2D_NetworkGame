@@ -55,13 +55,13 @@ public class CheckPointTrigger : NetworkBehaviour
     private void NotifyEveryoneColorChangeRpc(ulong playerId)
     {
         Debug.Log($"Player {playerId + 1} has captured the check point.");
+        StopAllCoroutines();
         StartCoroutine(DisplayTextMessage($"Player {playerId + 1} has captured the check point.", 10f));
     }
 
 
     IEnumerator DisplayTextMessage(string myMessage, float duration)
     {
-        StopAllCoroutines();
         messages.text = myMessage;
         yield return new WaitForSeconds(duration);
         messages.text = "";
