@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActivateAsteroids : MonoBehaviour
+public class ActivateOnStart : MonoBehaviour
 {
 
     [SerializeField] JoinMenu joinMenu;
-    [SerializeField] List<GameObject> Asteroids = new List<GameObject>();
+    [SerializeField] List<GameObject> startObjects = new List<GameObject>();
 
     private void OnEnable()
     {
@@ -21,17 +21,17 @@ public class ActivateAsteroids : MonoBehaviour
 
     private void OnStartHostChanged()
     {
-        foreach (GameObject asteroid in Asteroids)
+        foreach (GameObject obj in startObjects)
         {
-            asteroid.SetActive(true);
+            obj.SetActive(true);
         }
     }
 
     private void OnClientHostChanged()
     {
-        foreach (GameObject asteroid in Asteroids)
+        foreach (GameObject obj in startObjects)
         {
-            asteroid.SetActive(true);
+            obj.SetActive(true);
         }
     }
 
